@@ -1,10 +1,25 @@
+import axios from 'axios';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import getConfig from '../../utils/getConfig';
 import '../home/CardHome.css'
 
 const CardHome = ({product}) => {
 
     const navigate = useNavigate()
+
+    // Funcion para agregar items al Cart
+    const handleAddCart = (e) => {
+        e.stopPropagation
+        const URL='https://ecommerce-api-react.herokuapp.com/api/v1/cart'
+        const obj= {
+            id: product.id,
+            quantity: 1
+        }
+        axios.post(URL,obj,getConfig())
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
+    }
 
     const handleClick = () => {
         navigate(`/product/${product.id}`)
@@ -30,8 +45,8 @@ const CardHome = ({product}) => {
                         {product.price}
                  </span>
             </section>
-        <button className='card-home__btn'>
-            <i className="fa-solid fa-cart-plus fa-1x"></i>
+        <button onClick={handleAddCart} className='card-home__btn'>
+            <i className="fa-solid fa-cart-plus"></i>
         </button>
     </article>
   )

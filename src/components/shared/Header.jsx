@@ -20,16 +20,21 @@ const Header = () => {
         <ul className="header__list">
           <li className="header__item">
             <NavLink className={({isActive}) => isActive ? 'active-link' : ''} to="/login">
-            <i class="fa-regular fa-user fa-2x"></i>  
+            <i className="fa-regular fa-user fa-2x"></i>  
             </NavLink>
           </li>
           <li className="header__item">
             <NavLink className={({isActive}) => isActive ? 'active-link' : ''} to="/purchases">
-            <i class="fa-solid fa-store fa-2x"></i>  
+            <i className="fa-solid fa-store fa-2x"></i>  
             </NavLink>
           </li>
-          <li className="header__item">
+          {/* <li className="header__item">
             <p className="header__link"><i class="fa-solid fa-cart-shopping fa-2x"></i></p>
+          </li> */}
+          <li className="header__item">
+            <NavLink className={({isActive}) => isActive ? 'active-link' : ''} to="/cart">
+            <i className="fa-solid fa-cart-shopping fa-2x"></i>  
+            </NavLink>
           </li>
         </ul>
         <div className="toggle">

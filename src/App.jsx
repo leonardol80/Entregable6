@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/routes/Home'
@@ -9,8 +8,16 @@ import Purchases from './components/routes/Purchases'
 import Header from './components/shared/Header'
 import Cart from './components/shared/Cart'
 import Footer from './components/shared/Footer'
+import ProtectedRoutes from './components/routes/ProtectedRoutes'
+import { getAllProducts } from './store/slices/products.slice'
+import { useDispatch } from 'react-redux'
 
 function App() {
+
+  const dispatch = useDispatch()
+    useEffect(()=>{
+    dispatch(getAllProducts())
+  },[])
 
   return (
     <div className='app'>
@@ -18,10 +25,11 @@ function App() {
       <Routes>
         <Route path='/'element={<Home />}/>
         <Route path='/login'element={<Login />}/>
-        <Route path='/purchases'element={<Purchases />}/>
         <Route path='/product/:id' element={<ProductDetail />}/>
-
-        <Route path='/cart'element={<Cart />}/>
+          <Route element={ProtectedRoutes}>
+            <Route path='/purchases' element={<Purchases />}/>
+            <Route path='/cart' element={<Cart />}/>
+          </Route>
       </Routes>
       <Footer />
     </div>

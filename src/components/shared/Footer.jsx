@@ -4,7 +4,7 @@ import '../shared/styles/footer.css'
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="copyright">© By Celsius - Academlo 2022</div>
+      <div className="copyright">© By Celsius - Leonardo 2022</div>
       <div className="social-networks">
            <a href="#">
            <i className="fa-brands fa-instagram"></i>
