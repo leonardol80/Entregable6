@@ -1,0 +1,144 @@
+:root{
+  --color_fondo: #ffffff;
+  --color_hover_burguer: #395b64;
+  --color_navlink: red;
+  --color_logo: red;
+  --color_hover_nav: red;
+}
+
+.active-link{
+  background-color: var(--color_navlink);
+  color:white;
+  font-size: 20px;
+}
+
+/* .app{
+  display: flex;
+  flex-direction: column;
+} */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  align-items: center;
+  padding: 0 1em 0 1em;
+  padding: 20px;
+}
+
+.header__contenedor-logo{
+  width: 56%;
+  border: 1px solid #ccc7;
+}
+
+.header__logo {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color_logo);
+}
+
+.header__nav{
+  width: 46%;
+  height: 50px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__list{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__item:nth-child(1){
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc7;
+}
+
+.header__item:nth-child(2){
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc7;
+}
+
+.header__item:nth-child(3){
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc7;
+}
+
+li {
+  list-style: none;
+}
+
+li:hover{
+  color: var(--color_hover_nav);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  display: flex;
+  gap: 2em;
+  
+}
+
+.toggle {
+  display: none;
+}
+
+body {
+  background-color: var(--color_fondo);
+  max-width: 1250px;
+}
+
+.home{
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  li {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh-50px);
+    flex-direction: column;
+    margin-top: -100%;
+    margin-left: 85%;
+    transition: margin-top 1s;
+    z-index: -1; /* Para que no pase sobre el nav*/
+    justify-content: center;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .shownav {
+    margin-top: 0;
+  }
+
+  .imagen_burguer {
+    width: 25px;
+    height: 25px;
+  }
+
+  .imagen_burguer:hover {
+    background-color: var(--color_hover_burguer);
+    cursor: pointer;
+  }
+}

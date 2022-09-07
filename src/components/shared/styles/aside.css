@@ -1,0 +1,9 @@
+.aside{
+    display: flex;
+    flex-direction: column;
+}
+
+.home__container-card{
+    display: flex;
+    flex-direction: column;
+}
