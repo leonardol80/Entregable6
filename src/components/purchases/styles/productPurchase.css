@@ -7,6 +7,7 @@
     align-items: center; */
     gap: 25px;
     flex-wrap: wrap;
+    margin-left: 1em;
 }
 
 .purchase__title{
@@ -23,7 +24,7 @@
 }
 
 .card-purchase{
-    border: solid 1px black;
+    border: 1px solid #aaac;
     display: flex;
     flex-direction: column;
 }
@@ -39,10 +40,13 @@
     gap: 5em;
 }
 
+.ard-purchase__quantity{
+    border: 1px solid #aaac;
+    padding: 10px;
+    margin-bottom: 10px;
+}
 
-
-
-
-.card-purchase__price{
-    contain: '$';
+.card-purchase__price::before{
+    content: '$';
+    margin-right: 3px;
 }
