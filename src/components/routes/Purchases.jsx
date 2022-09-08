@@ -18,8 +18,8 @@ useEffect(()=>{
 
   return (
     <div className='purchase'>
-      <h2 className='purchase__title'>Purchases</h2>
-      <div className='purchase__container'></div>
+      <h2 className='purchase__title'>My Purchases</h2>
+      {/* <div className='purchase__container'></div> */}
     {
       purchases?.map(purchase =>(
         <PurchasesCard 

@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductPurchase from './ProductPurchase'
+import './styles/productPurchase.css'
 
 const PurchasesCard = ({purchase}) => {
 
@@ -7,7 +8,9 @@ const PurchasesCard = ({purchase}) => {
 
   return (
     <article className='card-purchase'>
-        <h3 className='card-purchase__date'>{purchase.createdAt}</h3>
+        <div className='container-fecha'>
+            <h3 className='card-purchase__date'>{purchase.createdAt}</h3>
+        </div>
         <ul className='card-purchase-body'>
             {
                 purchase.cart.products.map(product => (
