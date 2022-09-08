@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import getConfig from '../../utils/getConfig'
 import ProductCartInfo from '../cart/ProductCartInfo'
+import './styles/cart.css'
 
 const Cart = () => {
 
@@ -55,11 +56,11 @@ const Cart = () => {
         
         <hr className='cart__hr' />
 
-        <footer className='cart__footer'>
+        <div className='cart__footer'>
             <span className='cart_total-global-label'>Total:</span>
             <p className='cart_total-global-value'>1350</p>
             <button onClick={handleChekout} className='cart__btn'>Checkout</button>
-        </footer>
+        </div>
     </section>
   )
 }

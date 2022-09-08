@@ -2,7 +2,7 @@ import axios from 'axios';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import getConfig from '../../utils/getConfig';
-import '../home/CardHome.css'
+import './styles/cardHome.css'
 
 const CardHome = ({product}) => {
 
@@ -10,7 +10,7 @@ const CardHome = ({product}) => {
 
     // Funcion para agregar items al Cart
     const handleAddCart = (e) => {
-        e.stopPropagation
+        e.stopPropagation()
         const URL='https://ecommerce-api-react.herokuapp.com/api/v1/cart'
         const obj= {
             id: product.id,
