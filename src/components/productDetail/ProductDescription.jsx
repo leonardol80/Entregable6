@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import SliderImg from './SliderImg'
-import './styles/ProductDescription.css'
+import './styles/productDescription.css'
 
 const ProductDescription = ({productInfo}) => {
 
