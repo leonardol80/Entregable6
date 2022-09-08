@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import SliderImg from './SliderImg'
+import './styles/ProductDescription.css'
 
 const ProductDescription = ({productInfo}) => {
 
@@ -14,7 +16,11 @@ const handleMinus = () => {
 
 
   return (
+    
     <section className='product-info'>
+    <div>
+        {/* <SliderImg productInfo={productInfo}/> */}
+    </div>
         <h2 className='product-info__name'>
             {productInfo?.title}
         </h2>
@@ -27,14 +33,15 @@ const handleMinus = () => {
                 <span className='product-info__price-value'>{productInfo?.price}</span>
                 <article className='product-info__quantity'>
                     <h3 className='product-info__quantity-label'>Quantity</h3>
-                    <div className='product-info__quantity'>
-                        <button onClick={handleMinus}>-</button>
+                    <div className='product-info__quantity-product'>
+                        <button className='product-info__quantity-form' onClick={handleMinus}>-</button>
                         <div className='product-info__counter'>{counter}</div>
-                        <button onClick={handlePlus}>+</button>
+                        <button className='product-info__quantity-form'  onClick={handlePlus}>+</button>
                     </div>
                 </article>
             </article>
         </div>
+        <button className='product-info__btn-cart'>Add to cart </button>
     </section>
   )
 }

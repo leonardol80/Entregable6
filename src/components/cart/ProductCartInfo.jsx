@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import getConfig from '../../utils/getConfig'
+import './styles/ProductCartInfo.css'
 
 const ProductCartInfo = ({product,getAllProductsCart}) => {
 

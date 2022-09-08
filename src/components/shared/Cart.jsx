@@ -40,7 +40,7 @@ const Cart = () => {
 
   return (
     <section className='cart'>
-        <h2 className='cart_title'>Cart</h2>
+        {/* <h2 className='cart_title'>Cart</h2> */}
         <div className='cart__container-item'>
             {
                 cartProducts?.map(product => (
