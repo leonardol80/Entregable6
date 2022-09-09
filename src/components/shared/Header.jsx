@@ -1,14 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import burguer from './burguer.js'
 
 const Header = () => {
 
   const handleBurger=()=>{
-    const toggle=document.querySelector(".toggle");
-    const ul=document.querySelector("ul");
-    toggle.addEventListener("click",() => {
-    ul.classList.toggle("shownav");
-});
+    burguer()
   }
 
   return (

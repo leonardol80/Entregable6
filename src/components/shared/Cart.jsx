@@ -7,11 +7,21 @@ import './styles/cart.css'
 const Cart = () => {
 
     const [cartProducts, setCartProducts] = useState()
+    const [totalPrice, setTotalPrice] = useState()
 
     const getAllProductsCart = () => {
         const URL='https://ecommerce-api-react.herokuapp.com/api/v1/cart'
         axios.get(URL,getConfig())
-        .then(res => setCartProducts(res.data.data.cart.products))
+        .then(res => { 
+            const products= res.data.data.cart.products
+            setCartProducts(products)
+            // Calculo del total de la Cart
+            const total= products.reduce((acc,cv) => {
+                return Number(cv.price) * cv.productsInCart.quantity + acc
+            },0)
+            // console.log(total);
+            setTotalPrice(total)
+            })
         .catch(err => setCartProducts())
     }
 
@@ -34,6 +44,7 @@ const Cart = () => {
         .then(res => {
          console.log(res.data)
          getAllProductsCart()
+         setTotalPrice(0)
         })
         .catch(err => console.log(err))
      }
@@ -58,7 +69,7 @@ const Cart = () => {
 
         <div className='cart__footer'>
             <span className='cart_total-global-label'>Total:</span>
-            <p className='cart_total-global-value'>1350</p>
+            <p className='cart_total-global-value'>{totalPrice}</p>
             <button onClick={handleChekout} className='cart__btn'>Checkout</button>
         </div>
     </section>
